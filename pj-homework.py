@@ -30,9 +30,7 @@ if uploaded_file:
             df = pd.read_csv(uploaded_file)
         elif uploaded_file.name.endswith(".xlsx"):
             df = pd.read_excel(uploaded_file)
-        elif uploaded_file.name.endswith(".txt"):
-            df = pd.read_csv(uploaded_file, delimiter="\t")
-
+        
         st.write("File content:")
         st.dataframe(df.head())
 
@@ -41,7 +39,7 @@ if uploaded_file:
 
         # Send to OpenAI ChatGPT API
         response = openai.Completion.create(
-            engine="davinci-codex",
+            engine="gpt-3.5-turbo-instruct",
             prompt=f"Find the most frequent words in the following text and create a word cloud: {all_text}",
             max_tokens=100
         )
