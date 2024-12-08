@@ -1,2 +1,6 @@
-streamlit openai pandas
-pip install streamlit pandas openai matplotlib wordcloud
+streamlit 
+openai 
+pandas
+matplotlib 
+wordcloud
+nltk
